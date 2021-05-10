@@ -15,12 +15,19 @@ const routes = [
     name: 'Home',
     component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
     meta: { requiresAuth: true }
-  }
+  },
+  {
+    path: '/administracion',
+    name: 'Admin',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Admin.vue'),
+  },
 ]
 
 const router = new VueRouter({
   routes,
-  mode: "history"
+  mode: "history",
+  linkActiveClass: "active",
+  linkExactActiveClass: "exact-active",
 })
 
 router.beforeEach((to, from, next) => {

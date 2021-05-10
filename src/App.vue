@@ -1,30 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="info"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-btn
-          href="http://localhost:8080/"
-          plain
-        >
-          <span>Vue</span>
-        </v-btn>
-        </router-link>
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="#"
-        text
-      >
-        <span class="mr-2" @click="logout">Cerrar Sesión</span>
-        <v-icon>fas fa-sign-out-alt</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <nav-bar v-if="user != ''"></nav-bar>
 
     <v-main>
       <v-container>
@@ -35,15 +11,21 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import NavBar from '@/components/Navbar'
+import { mapState } from 'vuex';
+
+
 export default {
   name: 'App',
-
+  components: {
+    NavBar
+  },
   data: () => ({
     //
   }),
-  methods: {
-    ...mapActions(['logout'])
+  computed: {
+    ...mapState(['user'])
   }
+
 };
 </script>
