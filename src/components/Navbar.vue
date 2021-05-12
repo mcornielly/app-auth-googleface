@@ -93,6 +93,9 @@ export default {
               {name: 'Address', icon: 'far fa-address-book', to:{
                 name: 'Login'
               }},
+              {name: 'Chat', icon: 'far fa-comments', to:{
+                name: 'Chat'
+              }},
               {name: 'Users', icon: 'fas fa-users', to:{
                 name: 'Admin'
               }},

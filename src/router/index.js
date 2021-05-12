@@ -20,7 +20,15 @@ const routes = [
     path: '/administracion',
     name: 'Admin',
     component: () => import(/* webpackChunkName: "about" */ '../views/Admin.vue'),
+    meta: { requiresAuth: true }
   },
+  {
+    path: '/chat',
+    name: 'Chat',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Chat.vue'),
+    meta: { requiresAuth: true }
+  },
+  
 ]
 
 const router = new VueRouter({

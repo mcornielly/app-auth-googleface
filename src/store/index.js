@@ -7,7 +7,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: ''
+    user: '',
+    message: {}
   },
   mutations: {
     setUser(state, payload){
@@ -16,6 +17,9 @@ export default new Vuex.Store({
       }else{
         state.user = payload
       }
+    },
+    setMessage(state, payload){
+      state.message = payload
     }
   },
   actions: {
@@ -46,6 +50,13 @@ export default new Vuex.Store({
         
       }
 
+    },
+    newMessage({commit}, message){
+      
+      db.collection('chats').add(message).catch(error => {
+        console.log(error);
+      })
+      commit('setMessage', message)
     },
     logout({commit}){
       auth.signOut();

@@ -1,5 +1,5 @@
 <template>
-    <v-layout class="text-sm-center">
+    <v-layout class="text-sm-center mt-3" justify-center>
         <v-flex sm6>
             <v-card v-if="user">
                 <v-card-text>
@@ -12,7 +12,7 @@
                 </v-card-text>
                 <v-card-text>
                     <input type="file" ref="boton" class="d-none" @change="searchImage($event)">
-                    <v-btn class="primary" @click="$refs.boton.click()">Buscar imagen</v-btn>
+                    <v-btn class="primary mr-2" @click="$refs.boton.click()">Buscar imagen</v-btn>
                     <v-btn :loading="loading" class="secundary" :disabled="file === null" @click="uploadImage()">Subir imagen</v-btn>
                 </v-card-text>
 

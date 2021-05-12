@@ -18,7 +18,7 @@
           </v-btn>
         </v-card-text>
         <v-card-text>
-          <v-btn block @click="register = true" v-if="!register">¿No tienes Cuenta registrate aqui?</v-btn>
+          <v-btn class="mb-2" block @click="register = true" v-if="!register">¿No tienes Cuenta registrate aqui?</v-btn>
           <v-btn block v-else>¿Ya tienes cuenta ingresa aqui?</v-btn>
         </v-card-text>
       </v-card>
